@@ -1,27 +1,37 @@
 # Multiplica
+Este proyecto es una prueba para resolver a una peticion a un API para determinar una accion en la plataforma 
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.3.
+Desarrollado por Edgar Sanabria 
 
-## Development server
+## Framework y Dependencias 
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Proyecto esta basado en el Framework de Angular [Angular CLI](https://github.com/angular/angular-cli) version 10.1.3.
 
-## Code scaffolding
+Para facilitar el manejo del grid y css usa la biblioteca de Boostrap, para instalar las dependencias necesarias uso el siguiente comando 
+    - npm install bootstrap jquery @popperjs/core
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Para agregar las dependencias a la configuracion de angular se ejecuta el siguiente comando 
+    - ng add @ng-bootstrap/ng-bootstrap
 
-## Build
+Se incluye una dependencia para iconografia para el sistema la cual se instala con el siguiente comando:
+    - npm install material-design-icons
+    - ng add @angular/material
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Descarga de proyecto
 
-## Running unit tests
+El proyecto cuenta con una repositorio en github el cual puede descargarse con la siguiente URL: `https://github.com/ragdeblacks/multiplica.git`
+Para descargar el proyecto usar el siguiente comando:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+    - git clone https://github.com/ragdeblacks/multiplica.git
 
-## Running end-to-end tests
+## Inicializar server
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Para inicializar el sitio requiere la ejecucion de un par de comandos en consola en el siguiente orden: 
 
-## Further help
+    - npm install  /** Dependencias necesarias para el proyecto */
+    - ng serve     /** Inicializar el proyecto */
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Una vez unicializado para navegar en el usar la siguiente url en cualquier navegador para ver el resultado `http://localhost:4200/`. 
+Este framework tiene la facultad de refrescar cualquier cambio en codigo y reflejarse en el proyecto mientras este inicializado.
+
+

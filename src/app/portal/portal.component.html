@@ -1,0 +1,94 @@
+<div class="d-flex h-100 p-3 mx-auto flex-column">
+    <header class="mb-auto colors-title" [ngStyle]="{'background-color': colorSelected}" >
+        <div class="row"  >
+            <div class="col-sm" style="text-align: center;">
+                Colores
+            </div>
+        </div>
+    </header>
+
+    <main role="main" class="mh-100 ">
+      <div class="container-fluid">
+        <div class="row colors-row" *ngIf="colorsList && !colorDisabled"> <!--ROW INIT-->
+            <div class="col-sm-4 colors-item" 
+                *ngFor="let item of colorsList.data">
+                <div class="d-flex colors-item-button" id="{{item.id}}" 
+                    [ngStyle]="{'background-color': item.color}" 
+                    (click)="colorSelect(item.id, item.color)" >
+                    <div class="container-fluid">
+                        <div class="row d-flex justify-content-start "> <!--ROW INIT-->
+                            <label class="colors-item-year">
+                                {{item.year}}
+                            </label>
+                        </div><!--ROW CLOSE-->
+                        <div class="row d-flex justify-content-center colors-item-name"> <!--ROW INIT-->
+                            <label class="colors-item-year">
+                                {{item.name}}
+                            </label>
+                        </div><!--ROW CLOSE-->
+                        <div class="row d-flex justify-content-center colors-item-color"> <!--ROW INIT-->
+                            <label class="colors-item-year">
+                                {{item.color}}
+                            </label>
+                        </div><!--ROW CLOSE-->
+                        <div class="row d-flex justify-content-end colors-item-pantone"> <!--ROW INIT-->
+                            <label class="colors-item-year">
+                                {{item.pantone_value}}
+                            </label>
+                        </div><!--ROW CLOSE-->
+                    </div>    
+                </div>
+            </div>
+            
+        </div><!--ROW CLOSE-->
+        <div class="row colors-row" *ngIf="colorDisabled">
+            <div class="col-sm colors-item"  >
+                <div class="d-flex colors-item-button-select" 
+                    [ngStyle]="{'background-color': colorSelected}">
+                    <div class="container-fluid">
+                        <div class="row d-flex justify-content-start colors-item-button-select-year"> <!--ROW INIT-->
+                            <label class="">
+                                {{color.year}}
+                            </label>
+                        </div><!--ROW CLOSE-->
+                        <div class="row d-flex justify-content-center colors-item-button-select-title"> <!--ROW INIT-->
+                            <label class="">
+                                ¡Copiado!
+                            </label>
+                        </div><!--ROW CLOSE-->
+                        <div class="row d-flex justify-content-end colors-item-button-select-pantone"> <!--ROW INIT-->
+                            <label class="">
+                                {{color.pantone_value}}
+                            </label>
+                        </div><!--ROW CLOSE-->
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class=""  >
+        <div class="container-fluid">
+            <div class="row d-flex justify-content-between colors-footer" [ngStyle]="{'background-color': colorSelected}">
+                <div class="col-2 d-flex flex-row" *ngIf="!colorDisabled" >
+                    <button class="btn" [ngStyle]="{'background-color': colorSelected}" [disabled]="page <= 1" (click)="previous()">
+                        <mat-icon>arrow_back_ios</mat-icon>
+                        Anterior
+                    </button>
+                </div>
+                <div class="" *ngIf="colorDisabled">
+                    <button class="btn" [ngStyle]="{'background-color': colorSelected}" (click)="returnList()">
+                        Regresar a Lista
+                    </button>
+                </div>
+                <div class="col-2 d-flex flex-row-reverse" *ngIf="!colorDisabled" >
+                    <button class="btn" [ngStyle]="{'background-color': colorSelected}" [disabled]="this.page === this.total" (click)="next()">
+                        Siguiente
+                        <mat-icon>arrow_forward_ios</mat-icon>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </footer>
+  </div>
