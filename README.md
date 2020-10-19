@@ -34,4 +34,11 @@ Para inicializar el sitio requiere la ejecucion de un par de comandos en consola
 Una vez unicializado para navegar en el usar la siguiente url en cualquier navegador para ver el resultado `http://localhost:4200/`. 
 Este framework tiene la facultad de refrescar cualquier cambio en codigo y reflejarse en el proyecto mientras este inicializado.
 
+## Build and Deploy
+
+Se realizo el deploy del la web en la plataforma de Netlify, la cual podra consultarse en la siguiente url
+
+    - https://gallant-poitras-01a0ff.netlify.app/
+
+
 
