@@ -65,10 +65,38 @@
                 </div>
             </div>
         </div>
+        <div class="row">
+            <div class="container-fluid">
+                <div class="row d-flex justify-content-around" [ngStyle]="{'background-color': colorSelected}">
+                    <div class="col-6 d-flex align-items-start flex-column" *ngIf="!colorDisabled" >
+                        <button class="btn m-0 p-0" [ngStyle]="{'background-color': colorSelected}" [disabled]="page <= 1" (click)="previous()">
+                            <div class="row m-0 p-0">
+                                <div class="col-2 m-0 p-0"><mat-icon>arrow_back_ios</mat-icon></div>
+                                <div class="col-9 m-0 p-0">&nbsp; Anterior</div>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="" *ngIf="colorDisabled">
+                        <button class="btn" [ngStyle]="{'background-color': colorSelected}" (click)="returnList()">
+                            Regresar a Lista
+                        </button>
+                    </div>
+                    <div class="col-6 d-flex align-items-end flex-column" *ngIf="!colorDisabled" >
+                        <button class="btn m-0 p-0" [ngStyle]="{'background-color': colorSelected}" [disabled]="this.page === this.total" (click)="next()">
+                            <div class="row m-0 p-0">
+                                <div class="col-9 m-0 p-0">Siguiente &nbsp;</div>
+                                <div class="col-2 m-0 p-0"><mat-icon>arrow_forward_ios</mat-icon></div>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
       </div>
     </main>
 
-    <footer class=""  >
+    <!-- <footer class=""  >
         <div class="container-fluid">
             <div class="row d-flex justify-content-between colors-footer" [ngStyle]="{'background-color': colorSelected}">
                 <div class="col-2 d-flex flex-row" *ngIf="!colorDisabled" >
@@ -90,5 +118,5 @@
                 </div>
             </div>
         </div>
-    </footer>
+    </footer> -->
   </div>
